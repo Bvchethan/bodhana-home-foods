@@ -12,7 +12,7 @@ export const products = [
     name: "Dry Fruit Ragi Laddu",
     description: "Made with ragi, dry fruits, nuts and jaggery.",
     price: 220,
-    image: "/images/ragi-laddu.png",
+    image: "/images/raggi-laddu.png",
     // imageClass:
     //   "bg-[linear-gradient(135deg,rgba(104,66,37,0.92),rgba(200,138,42,0.8)),radial-gradient(circle_at_top,rgba(255,255,255,0.22),transparent_45%)]",
   },
@@ -37,6 +37,13 @@ export const products = [
     description: "Crunchy spicy snack with curry leaves and nuts.",
     price: 160,
     image: "/images/karambundi.png",
+  },
+  {
+    id: "halwa",
+    name: "Halwa",
+    description: " ---------",
+    price: 100,
+    image: "/images/halwa.png",
   },
 ];
 
