@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+
+  --color-green: #2f5d50;
+  --color-green-dark: #24483d;
+
+  --color-brown: #5f4b3a;
+  --color-cream: #faf7f2;
+
+  --color-gold: #b88a44;
+
+  --font-display: "Lora", serif;
+  --font-sans: "Nunito Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: var(--color-brown);
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--color-green);
+}
+
+::selection {
+  background: rgba(184, 138, 68, 0.2);
+  color: var(--color-green-dark);
+}
+
+.section-block {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+.product-card,
+.cart-panel {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
