@@ -21,25 +21,22 @@ export const products = [
     name: "Dry Fruit Sunni Unda",
     description: "Wholesome dry fruits, nuts and jaggery.",
     price: 240,
-
-    imageClass:
-      "bg-[linear-gradient(135deg,rgba(74,44,23,0.94),rgba(162,107,36,0.82)),radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent_45%)]",
+    image: "/images/dryfruit-sunni-unda.png",
   },
   {
     id: "nuvvula-unda",
     name: "Nuvvula Unda",
     description: "Traditional sesame sweet made with jaggery.",
     price: 180,
-    imageClass:
-      "bg-[linear-gradient(135deg,rgba(15,77,28,0.9),rgba(200,138,42,0.75)),radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_40%)]",
+
+    image: "/images/nuvvula.png",
   },
   {
     id: "karam-bunddi",
     name: "Karam Bunddi",
     description: "Crunchy spicy snack with curry leaves and nuts.",
     price: 160,
-    imageClass:
-      "bg-[linear-gradient(135deg,rgba(200,138,42,0.96),rgba(106,53,19,0.88)),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.18),transparent_40%)]",
+    image: "/images/karambundi.png",
   },
 ];
 
