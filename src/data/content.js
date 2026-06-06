@@ -13,8 +13,6 @@ export const products = [
     description: "Made with ragi, dry fruits, nuts and jaggery.",
     price: 220,
     image: "/images/raggi-laddu.png",
-    // imageClass:
-    //   "bg-[linear-gradient(135deg,rgba(104,66,37,0.92),rgba(200,138,42,0.8)),radial-gradient(circle_at_top,rgba(255,255,255,0.22),transparent_45%)]",
   },
   {
     id: "dry-fruit-sunni-unda",
@@ -28,7 +26,6 @@ export const products = [
     name: "Nuvvula Unda",
     description: "Traditional sesame sweet made with jaggery.",
     price: 180,
-
     image: "/images/nuvvula.png",
   },
   {
@@ -41,7 +38,7 @@ export const products = [
   {
     id: "halwa",
     name: "Halwa",
-    description: " ---------",
+    description: "Fresh halwa made in small batches.",
     price: 100,
     image: "/images/halwa.png",
   },
@@ -50,94 +47,57 @@ export const products = [
 export const uspItems = [
   {
     title: "100% Homemade",
-    description:
-      "Authentic recipes prepared in small batches for a true homemade taste.",
+    description: "Prepared at home in small batches.",
     icon: HeartHandshake,
   },
   {
     title: "Only Jaggery",
-    description:
-      "Our sweet products use jaggery for a richer, more natural sweetness.",
+    description: "Our sweet items are made with jaggery.",
     icon: Sparkles,
   },
   {
     title: "No Preservatives",
-    description:
-      "Fresh preparation without preservatives, additives, or artificial shortcuts.",
+    description: "We do not add preservatives to our products.",
     icon: ShieldCheck,
   },
   {
     title: "Fresh Ingredients",
-    description:
-      "Premium nuts, ragi, sesame, spices, and curry leaves chosen with care.",
+    description: "We use fresh ingredients like nuts, sesame, and spices.",
     icon: Wheat,
   },
   {
-    title: "Made with Love & Hygiene",
-    description:
-      "Prepared thoughtfully with hygiene, consistency, and warm homemade attention.",
+    title: "Clean Preparation",
+    description: "Care is taken with hygiene while making every batch.",
     icon: Leaf,
   },
 ];
 
 export const galleryImages = [
   {
-    title: "Freshly Rolled Laddus",
-    caption: "Warm tones for your product photography placeholder",
-    className:
-      "bg-[linear-gradient(180deg,rgba(200,138,42,0.7),rgba(74,44,23,0.78))]",
+    title: "Dry Fruit Ragi Laddu",
+    caption: "Made with ragi, dry fruits, nuts and jaggery.",
+    src: "/images/raggi-laddu.png",
     tall: true,
   },
   {
-    title: "Traditional Ingredients",
-    caption: "Jaggery, nuts, sesame and handpicked pantry staples",
-    className:
-      "bg-[linear-gradient(180deg,rgba(15,77,28,0.74),rgba(200,138,42,0.55))]",
+    title: "Dry Fruit Sunni Unda",
+    caption: "A dry fruit sweet made with nuts and jaggery.",
+    src: "/images/dryfruit-sunni-unda.png",
   },
   {
-    title: "Homemade Process",
-    caption: "Simple kitchen moments with a premium presentation",
-    className:
-      "bg-[linear-gradient(180deg,rgba(74,44,23,0.7),rgba(15,77,28,0.62))]",
+    title: "Nuvvula Unda",
+    caption: "Traditional sesame sweet made with jaggery.",
+    src: "/images/nuvvula.png",
   },
   {
-    title: "Snack Collection",
-    caption: "Savory and sweet items displayed for the grid",
-    className:
-      "bg-[linear-gradient(180deg,rgba(200,138,42,0.74),rgba(15,77,28,0.72))]",
+    title: "Karam Bunddi",
+    caption: "A crunchy snack with curry leaves and nuts.",
+    src: "/images/karambundi.png",
     tall: true,
   },
   {
-    title: "Packed with Care",
-    caption: "A neat, delivery-ready placeholder composition",
-    className:
-      "bg-[linear-gradient(180deg,rgba(112,64,32,0.76),rgba(200,138,42,0.58))]",
-  },
-  {
-    title: "Golden Jaggery Touch",
-    caption: "Premium earthy palette for a polished brand mood",
-    className:
-      "bg-[linear-gradient(180deg,rgba(15,77,28,0.74),rgba(74,44,23,0.74))]",
-  },
-];
-
-export const reviews = [
-  {
-    name: "Sowmya R.",
-    location: "Hyderabad",
-    quote:
-      "The laddus tasted genuinely homemade and not overly sweet. You can really tell the jaggery and ingredients are fresh.",
-  },
-  {
-    name: "Harsha K.",
-    location: "Vijayawada",
-    quote:
-      "Karam Bunddi had the perfect crunch and spice. Beautiful packaging and a very clean, premium feel overall.",
-  },
-  {
-    name: "Anitha M.",
-    location: "Bengaluru",
-    quote:
-      "Loved the Nuvvula Unda. It reminded me of traditional homemade sweets from childhood, but with a refined finish.",
+    title: "Halwa",
+    caption: "Fresh halwa prepared in small batches.",
+    src: "/images/halwa.png",
   },
 ];

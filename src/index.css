@@ -2,15 +2,11 @@
 @import "tailwindcss";
 
 @theme {
-
   --color-green: #2f5d50;
   --color-green-dark: #24483d;
-
   --color-brown: #5f4b3a;
   --color-cream: #faf7f2;
-
   --color-gold: #b88a44;
-
   --font-display: "Lora", serif;
   --font-sans: "Nunito Sans", sans-serif;
 }
@@ -24,6 +20,7 @@ body {
   background: var(--color-cream);
   color: var(--color-brown);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -46,9 +43,21 @@ h6 {
   contain-intrinsic-size: 1px 900px;
 }
 
+.hero-image {
+  object-position: center 42%;
+}
+
 .product-card,
 .cart-panel {
   will-change: transform;
+}
+
+.gallery-tile img {
+  transition: transform 400ms ease;
+}
+
+.gallery-tile:hover img {
+  transform: scale(1.03);
 }
 
 @media (prefers-reduced-motion: reduce) {
