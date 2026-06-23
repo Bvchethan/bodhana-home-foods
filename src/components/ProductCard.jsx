@@ -2,10 +2,19 @@ import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
 
 function ProductCard({ product, onAddToCart, formatCurrency }) {
+  const variants = product.variants || [
+    { weight: "250g", price: Math.round(product.price * 0.5) },
+    { weight: "500g", price: product.price },
+    { weight: "1kg", price: product.price * 2 },
+  ];
+
+  const [selectedVariant, setSelectedVariant] = useState(
+    variants.find((v) => v.weight === "500g") || variants[0]
+  );
   const [added, setAdded] = useState(false);
 
   const handleAdd = () => {
-    onAddToCart(product);
+    onAddToCart(product, selectedVariant.weight, selectedVariant.price);
     setAdded(true);
 
     setTimeout(() => {
@@ -33,15 +42,38 @@ function ProductCard({ product, onAddToCart, formatCurrency }) {
           {product.description}
         </p>
 
+        {}
+        <div className="mt-5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gold)]">
+            Select Weight
+          </span>
+          <div className="mt-1.5 flex gap-1.5 rounded-2xl bg-[rgba(95,75,58,0.04)] p-1">
+            {variants.map((v) => (
+              <button
+                key={v.weight}
+                type="button"
+                onClick={() => setSelectedVariant(v)}
+                className={`flex-1 rounded-xl py-1.5 text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  selectedVariant.weight === v.weight
+                    ? "bg-white text-[var(--color-green)] shadow-sm"
+                    : "text-[rgba(95,75,58,0.68)] hover:bg-white/40 hover:text-[var(--color-green)]"
+                }`}
+              >
+                {v.weight}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-6 flex items-center justify-between gap-4">
           <p className="text-2xl font-semibold text-[var(--color-brown)]">
-            {formatCurrency(product.price)}
+            {formatCurrency(selectedVariant.price)}
           </p>
 
           <button
             type="button"
             onClick={handleAdd}
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--color-green)] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[rgba(47,93,80,0.18)] transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--color-green)] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[rgba(47,93,80,0.18)] transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
           >
             <ShoppingCart className="h-4 w-4" />
             {added ? "Added ✓" : "Add To Cart"}

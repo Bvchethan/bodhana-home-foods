@@ -55,7 +55,10 @@ const buildWhatsAppUrl = (cartItems, total) => {
     "",
     "I would like to place an order:",
     "",
-    ...cartItems.map((item) => `- ${item.name} x${item.quantity}`),
+    ...cartItems.map(
+      (item) =>
+        `- ${item.name}${item.weight ? ` (${item.weight})` : ""} x${item.quantity}`,
+    ),
     "",
     `Total: ${formatCurrency(total)}`,
     "",
@@ -172,7 +175,7 @@ function App() {
           <div className="relative">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(47,93,80,0.1)] bg-white/80 px-3 py-1.5 text-[0.65rem] font-semibold tracking-[0.14em] text-[var(--color-green)] shadow-sm sm:px-4 sm:py-2 sm:text-xs">
               <Sparkles className="h-4 w-4 text-[var(--color-gold)]" />
-              Homemade • Fresh • Healthy
+              Homemade Fresh
             </span>
 
             <h1 className="mt-5 max-w-xl text-[2.9rem] leading-[0.97] text-[var(--color-green)] sm:mt-6 sm:max-w-2xl sm:text-6xl lg:text-[5.25rem]">
@@ -270,7 +273,7 @@ function App() {
             <SectionHeading
               eyebrow="Why Bodhana"
               title="Made the way homemade food should be."
-              description="The focus is simple: jaggery-based sweets, fresh ingredients, and clean preparation."
+              description="The focus is simple   jaggery-based sweets, fresh ingredients, and clean preparation."
               className="max-w-xl"
             />
 
@@ -572,7 +575,7 @@ Feedback:
 
       <footer className="mt-2 border-t border-[rgba(95,75,58,0.08)] bg-[rgba(255,255,255,0.5)]">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-7 sm:px-6 sm:py-8 lg:grid-cols-[1.25fr_0.75fr_0.75fr] lg:gap-8 lg:px-8">
-          <div>
+          {/* <div>
             <p className="text-2xl text-[var(--color-green)]">
               BODHANA HOME FOODS
             </p>
@@ -580,9 +583,9 @@ Feedback:
               Homemade sweets and snacks made with jaggery and fresh
               ingredients.
             </p>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-green)]">
               Quick Links
             </p>
@@ -597,9 +600,9 @@ Feedback:
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-green)]">
               Social Links
             </p>
@@ -614,11 +617,17 @@ Feedback:
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="border-t border-[rgba(95,75,58,0.08)] px-4 py-4 text-center text-sm text-[rgba(95,75,58,0.62)]">
           Copyright © {new Date().getFullYear()} BODHANA HOME FOODS. All rights
-          reserved.
+          reserved.{" "}
+          <a
+            href="https://www.linkedin.com/in/bvchethan/"
+            class="text-xs text-blue-300 hover:text-blue-400"
+          >
+            dev-Chethan
+          </a>{" "}
         </div>
       </footer>
 
@@ -673,8 +682,13 @@ Feedback:
                       <div className="min-w-0 flex-1">
                         <div className="flex items-start justify-between gap-3">
                           <div>
-                            <p className="text-sm font-semibold text-[var(--color-green)] sm:text-base">
+                            <p className="text-sm font-semibold text-[var(--color-green)] sm:text-base flex items-center flex-wrap gap-1">
                               {item.name}
+                              {item.weight && (
+                                <span className="text-[10px] font-bold text-[var(--color-gold)] bg-[rgba(184,138,68,0.1)] px-2 py-0.5 rounded-full">
+                                  {item.weight}
+                                </span>
+                              )}
                             </p>
                             <p className="mt-1 text-xs text-[rgba(95,75,58,0.72)] sm:text-sm">
                               {formatCurrency(item.price)}

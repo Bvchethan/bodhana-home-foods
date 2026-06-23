@@ -22,17 +22,29 @@ export function useCart() {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(cartItems))
   }, [cartItems])
 
-  const addToCart = (product) => {
+  const addToCart = (product, selectedWeight, selectedPrice) => {
+    const cartItemId = `${product.id}-${selectedWeight}`
     setCartItems((currentItems) => {
-      const existingItem = currentItems.find((item) => item.id === product.id)
+      const existingItem = currentItems.find((item) => item.id === cartItemId)
 
       if (existingItem) {
         return currentItems.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
+          item.id === cartItemId ? { ...item, quantity: item.quantity + 1 } : item,
         )
       }
 
-      return [...currentItems, { ...product, quantity: 1 }]
+      return [
+        ...currentItems,
+        {
+          id: cartItemId,
+          productId: product.id,
+          name: product.name,
+          image: product.image,
+          weight: selectedWeight,
+          price: selectedPrice,
+          quantity: 1,
+        },
+      ]
     })
   }
 
