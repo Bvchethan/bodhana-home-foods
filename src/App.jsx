@@ -1,11 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import ProductCard from "./components/ProductCard";
 import SectionHeading from "./components/SectionHeading";
-import {
-  businessInfo,
-  navigationLinks,
-  whatsappConfig,
-} from "./config/site";
+import { businessInfo, navigationLinks, whatsappConfig } from "./config/site";
 import { galleryImages, products, uspItems } from "./data/content";
 import { useCart } from "./hooks/useCart";
 
@@ -447,8 +443,8 @@ function App() {
                   Place your order on WhatsApp.
                 </h2>
                 <p className="mt-4 text-xs leading-relaxed text-neutral-300">
-                  For orders, availability, and quantity details, WhatsApp is the
-                  easiest way to reach us.
+                  For orders, availability, and quantity details, WhatsApp is
+                  the easiest way to reach us.
                 </p>
               </div>
 
@@ -457,7 +453,8 @@ function App() {
                   FASTEST WAY TO ORDER
                 </p>
                 <p className="mt-1 text-xs text-neutral-200">
-                  Add items to cart, review the total, and send the order summary directly on WhatsApp.
+                  Add items to cart, review the total, and send the order
+                  summary directly on WhatsApp.
                 </p>
               </div>
 
@@ -492,15 +489,14 @@ function App() {
 
       <footer className="border-t-2 border-black bg-white py-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-xs text-black font-bold uppercase tracking-wider">
-          Copyright © {new Date().getFullYear()} BODHANA HOME FOODS. All rights reserved.{" "}
+          Copyright © {new Date().getFullYear()} BODHANA HOME FOODS. All rights
+          reserved.{" "}
           <a
             href="https://www.linkedin.com/in/bvchethan/"
             target="_blank"
             rel="noreferrer"
             className="underline hover:text-neutral-600 ml-1"
-          >
-            dev-Chethan
-          </a>
+          ></a>
         </div>
       </footer>
 
@@ -514,9 +510,7 @@ function App() {
               <p className="text-base font-black uppercase text-black">
                 YOUR CART
               </p>
-              <p className="text-xs text-neutral-600">
-                {totalItems} item(s)
-              </p>
+              <p className="text-xs text-neutral-600">{totalItems} item(s)</p>
             </div>
             <button
               type="button"
