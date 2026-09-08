@@ -1,5 +1,5 @@
 export const whatsappConfig = {
-  phoneNumber: "917892176357",
+  phoneNumber: "8466041801",
 };
 
 export const navigationLinks = [
