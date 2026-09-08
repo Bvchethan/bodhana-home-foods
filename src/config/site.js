@@ -12,11 +12,11 @@ export const navigationLinks = [
 ];
 
 export const businessInfo = {
-  phone: "917892176357",
-  whatsapp: "917892176357",
+  phone: "8466041801",
+  whatsapp: "8466041801",
   instagram: "@bodhana_home_foods",
   address: "Hyder nagar , Nizampet 5000072, Hyderabad",
-  hours: "Mon - Sat, 9:00 AM - 7:00 PM",
+  hours: "Orders need be to given one day before ",
 };
 
 export const socialLinks = [
