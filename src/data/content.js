@@ -1,11 +1,3 @@
-import {
-  HeartHandshake,
-  Leaf,
-  ShieldCheck,
-  Sparkles,
-  Wheat,
-} from "lucide-react";
-
 export const products = [
   {
     id: "dry-fruit-ragi-laddu",
@@ -28,7 +20,7 @@ export const products = [
     variants: [
       { weight: "250g", price: 225 },
       { weight: "500g", price: 450 },
-      { weight: "1kg", price: 900},
+      { weight: "1kg", price: 900 },
     ],
   },
   {
@@ -40,7 +32,7 @@ export const products = [
     variants: [
       { weight: "250g", price: 125 },
       { weight: "500g", price: 250 },
-      { weight: "1kg", price: 500},
+      { weight: "1kg", price: 500 },
     ],
   },
   {
@@ -73,27 +65,22 @@ export const uspItems = [
   {
     title: "100% Homemade",
     description: "Prepared at home in small batches.",
-    icon: HeartHandshake,
   },
   {
     title: "Only Jaggery",
     description: "Our sweet items are made with jaggery.",
-    icon: Sparkles,
   },
   {
     title: "No Preservatives",
     description: "We do not add preservatives to our products.",
-    icon: ShieldCheck,
   },
   {
     title: "Fresh Ingredients",
     description: "We use fresh ingredients like nuts, sesame, and spices.",
-    icon: Wheat,
   },
   {
     title: "Clean Preparation",
     description: "Care is taken with hygiene while making every batch.",
-    icon: Leaf,
   },
 ];
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ShoppingCart } from "lucide-react";
 
 function ProductCard({ product, onAddToCart, formatCurrency }) {
   const variants = product.variants || [
@@ -23,60 +22,60 @@ function ProductCard({ product, onAddToCart, formatCurrency }) {
   };
 
   return (
-    <article className="product-card group overflow-hidden rounded-[1.9rem] border border-[rgba(95,75,58,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(247,241,231,0.9))] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(95,75,58,0.14)]">
-      <div className="relative overflow-hidden">
+    <article className="product-card rounded-none border-2 border-black bg-white transition duration-200 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+      <div className="relative overflow-hidden border-b-2 border-black">
         <img
           src={product.image}
           alt={product.name}
-          className="h-44 w-full object-cover transition duration-500 group-hover:scale-[1.04] sm:h-64"
+          className="h-52 w-full object-cover transition duration-300 group-hover:scale-105 sm:h-60 rounded-none"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(37,29,23,0.2))]" />
       </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-[var(--color-green)]">
-          {product.name}
-        </h3>
+      <div className="p-5 flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-black uppercase tracking-tight text-black">
+            {product.name}
+          </h3>
 
-        <p className="mt-3 min-h-14 text-sm leading-7 text-[rgba(95,75,58,0.74)]">
-          {product.description}
-        </p>
+          <p className="mt-2 text-xs leading-relaxed text-neutral-600 min-h-[2.5rem]">
+            {product.description}
+          </p>
 
-        {}
-        <div className="mt-5">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gold)]">
-            Select Weight
-          </span>
-          <div className="mt-1.5 flex gap-1.5 rounded-2xl bg-[rgba(95,75,58,0.04)] p-1">
-            {variants.map((v) => (
-              <button
-                key={v.weight}
-                type="button"
-                onClick={() => setSelectedVariant(v)}
-                className={`flex-1 rounded-xl py-1.5 text-xs font-bold transition-all duration-200 cursor-pointer ${
-                  selectedVariant.weight === v.weight
-                    ? "bg-white text-[var(--color-green)] shadow-sm"
-                    : "text-[rgba(95,75,58,0.68)] hover:bg-white/40 hover:text-[var(--color-green)]"
-                }`}
-              >
-                {v.weight}
-              </button>
-            ))}
+          {/* Weight Selector */}
+          <div className="mt-4">
+            <span className="text-[10px] font-black uppercase tracking-widest text-black">
+              Weight
+            </span>
+            <div className="mt-1 flex gap-1">
+              {variants.map((v) => (
+                <button
+                  key={v.weight}
+                  type="button"
+                  onClick={() => setSelectedVariant(v)}
+                  className={`flex-1 rounded-none border border-black py-1 text-xs font-bold transition-colors cursor-pointer ${
+                    selectedVariant.weight === v.weight
+                      ? "bg-black text-white"
+                      : "bg-white text-black hover:bg-neutral-100"
+                  }`}
+                >
+                  {v.weight}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-between gap-4">
-          <p className="text-2xl font-semibold text-[var(--color-brown)]">
+        <div className="mt-6 flex items-center justify-between gap-3 pt-4 border-t border-neutral-200">
+          <p className="text-xl font-black text-black">
             {formatCurrency(selectedVariant.price)}
           </p>
 
           <button
             type="button"
             onClick={handleAdd}
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--color-green)] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[rgba(47,93,80,0.18)] transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+            className="rounded-none bg-black px-4 py-2.5 text-xs font-black uppercase tracking-wider text-white transition hover:bg-neutral-800 active:bg-black cursor-pointer border border-black"
           >
-            <ShoppingCart className="h-4 w-4" />
-            {added ? "Added ✓" : "Add To Cart"}
+            {added ? "ADDED ✓" : "ADD TO CART"}
           </button>
         </div>
       </div>
